@@ -51,18 +51,24 @@ function makeNewDiv(){
     let len = document.getElementsByClassName("listy").length
     i=0
     if (len > 9) {
-        for (let listItem of listyItems) {
-            if(listItem.innerHTML==ipvalue){
-                listyItems[i].remove();
-            }
-            else{
-                listyItems[0].remove();
-            }
-            i++;
-        }
-    }
-    document.getElementById('target').appendChild(element)
-}
+			for (let listItem of listyItems) {
+				
+				if(listItem.innerHTML==ipvalue){
+					listyItems[i].remove();
+				}
+				else{
+                    let randomNo=Math.floor(Math.random()*listyItems.length) 
+					listyItems[randomNo].remove();
+				}
+				i++;
+			}
+			
+			
+
+		}
+		document.getElementById('target').appendChild(element)
+	}
+
 
     
 </script>
