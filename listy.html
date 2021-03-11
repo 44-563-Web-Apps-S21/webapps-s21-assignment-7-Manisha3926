@@ -26,7 +26,7 @@
 
 <body>
     <h1>Manisha Mandapati builds a list</h1>
-    <input type="text" id=3001>
+    <input type="text" id=3250>
     <div class="flex-container" id="target">
       <div class="listy">row item 1</div>   
       <div class="listy">row item 2</div>  
@@ -43,13 +43,27 @@
 function makeNewDiv(){
     /* make the div and its text */
     let element = document.createElement("div")
-    element.innerHTML = document.getElementById("3001").value
-    element.setAttribute("class","listy")
-    element.style.color = "black"
-
-    /* add it to the container */
+    element.innerHTML = document.getElementById("3250").value
+    let ipvalue=document.getElementById("3250").value
+    element.setAttribute("class", "listy")
+    element.style.color = "green"
+    var listyItems=document.getElementsByClassName("listy")
+    let len = document.getElementsByClassName("listy").length
+    i=0
+    if (len > 9) {
+        for (let listItem of listyItems) {
+            if(listItem.innerHTML==ipvalue){
+                listyItems[i].remove();
+            }
+            else{
+                listyItems[0].remove();
+            }
+            i++;
+        }
+    }
     document.getElementById('target').appendChild(element)
-    
 }
+
+    
 </script>
 </html>	
